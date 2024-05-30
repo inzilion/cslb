@@ -24,7 +24,12 @@ const template = [
         const win = new BrowserWindow({ width: 1024, height: 768 })
         win.loadURL('https://biko.kr')          }
         },
-      { label: 'KOISTUDY',
+        { label: '플레이봇',
+        click: async () => {
+        const win = new BrowserWindow({ width: 1024, height: 768 })
+        win.loadURL('http://playbot.spaceii.com')          }
+        },      
+        { label: 'KOISTUDY',
         click: async () => {
         const win = new BrowserWindow({ width: 1024, height: 768 })
         win.loadURL('http://koistudy.net')          }
