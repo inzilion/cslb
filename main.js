@@ -36,6 +36,26 @@ const template = [
       }
     ]
   },
+  {
+    label: '뒤로',
+    accelerator: 'CmdOrCtrl+Left', // 단축키 설정 (CmdOrCtrl+Left)
+    click() {
+    // 이전 페이지로 이동
+      if (app.win.webContents.canGoBack()) {
+        app.win.webContents.goBack();
+      }
+    }
+  },
+  {
+    label: '앞으로',
+    accelerator: 'CmdOrCtrl+Right', // 단축키 설정 (CmdOrCtrl+Right)
+    click() {
+    // 이전 페이지로 이동
+      if (app.win.webContents.canGoForward()) {
+        app.win.webContents.goForward();
+      }
+    }
+  }
 ]
 
 const menu = Menu.buildFromTemplate(template)
@@ -48,14 +68,15 @@ const createWindow = () => {
   })
   //win.loadFile('index.html')
   win.loadURL('https://inzilion.github.io')
+  return win
 }
 
 app.whenReady().then(() => {
-  createWindow()
+  app.win = createWindow()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
+      app.win = createWindow()
     }
   })
 })
