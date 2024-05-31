@@ -1,7 +1,6 @@
 const { app, BrowserWindow, Menu } = require('electron/main')
 const path = require('node:path')
 const template = [
-  // { role: 'appMenu' }
   {
     label: 'CSLB',
     submenu: [
@@ -10,9 +9,8 @@ const template = [
       { role: 'quit' }
     ]
   },
-  // { role: 'fileMenu' }
   {
-    label: '사이트',
+    label: 'New',
     submenu: [
       { label: '코드업',
         click: async () => {
@@ -37,7 +35,7 @@ const template = [
     ]
   },
   {
-    label: '뒤로',
+    label: ' 〈 ',
     accelerator: 'CmdOrCtrl+Left', // 단축키 설정 (CmdOrCtrl+Left)
     click() {
     // 이전 페이지로 이동
@@ -47,7 +45,7 @@ const template = [
     }
   },
   {
-    label: '앞으로',
+    label: ' 〉 ',
     accelerator: 'CmdOrCtrl+Right', // 단축키 설정 (CmdOrCtrl+Right)
     click() {
     // 이전 페이지로 이동
