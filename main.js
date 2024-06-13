@@ -64,7 +64,7 @@ const createWindow = () => {
     width: 1024,
     height: 768  
   })
-  //win.loadFile('index.html')
+//  win.loadFile('index.html')
   win.loadURL('https://inzilion.github.io')
   return win
 }
